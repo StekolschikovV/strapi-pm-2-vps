@@ -12,9 +12,9 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            whoami
-            ls -al
-            echo 'The only winning move is not to play.' > demo.txt
+            git clone https://github.com/StekolschikovV/strapi-pm-2-vps.git
+            cd strapi-pm-2-vps
+            npm i
 #       - name: ls
 #         run: ls
 #       - name: e
