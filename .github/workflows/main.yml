@@ -18,7 +18,8 @@ jobs:
             sudo ln -s /usr/local/bin/node-waf /usr/bin/node-waf
             rm -rf strapi-pm-2-vps/ 
             git clone https://github.com/StekolschikovV/strapi-pm-2-vps.git 
-            cd strapi-pm-2-vps && npm i
+            cd strapi-pm-2-vps
+            yarn
         
             
 #       - name: ls
