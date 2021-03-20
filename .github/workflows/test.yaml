@@ -1,13 +1,13 @@
-name: Node CI
-on: [push]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - name: ls
-      run: ls
-    - name: i
-      run: npm i
-    - name: ls
-      run: ls
+# name: Node CI
+# on: [push]
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v1
+#     - name: ls
+#       run: ls
+#     - name: i
+#       run: npm i
+#     - name: ls
+#       run: ls
