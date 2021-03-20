@@ -16,6 +16,7 @@ jobs:
             git clone https://github.com/StekolschikovV/strapi-pm-2-vps.git
             cd strapi-pm-2-vps
             ls
+            npm i
 #       - name: ls
 #         run: ls
 #       - name: e
