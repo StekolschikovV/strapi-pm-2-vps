@@ -7,3 +7,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: ls
       run: ls
+    - name: i
+      run: npm i
+    - name: ls
+      run: ls
