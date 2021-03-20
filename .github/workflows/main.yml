@@ -18,6 +18,9 @@ jobs:
             sudo ln -s /usr/local/lib/node /usr/lib/node
             sudo ln -s /usr/local/bin/npm /usr/bin/npm
             sudo ln -s /usr/local/bin/node-waf /usr/bin/node-waf
+            nvm install --lts
+            node -v
+            npm -v
             rm -rf strapi-pm-2-vps/ 
             git clone https://github.com/StekolschikovV/strapi-pm-2-vps.git 
             cd strapi-pm-2-vps
