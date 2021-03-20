@@ -14,3 +14,5 @@ jobs:
           script: whoami
       - name: ls
         run: ls
+      - name: e
+        run: echo 'The only winning move is not to play.' > demo.txt
