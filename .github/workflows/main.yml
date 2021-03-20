@@ -12,9 +12,10 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
+            rm -rf strapi-pm-2-vps/
             git clone https://github.com/StekolschikovV/strapi-pm-2-vps.git
             cd strapi-pm-2-vps
-            npm i
+            ls
 #       - name: ls
 #         run: ls
 #       - name: e
