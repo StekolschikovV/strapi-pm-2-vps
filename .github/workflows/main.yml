@@ -4,23 +4,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-#       - name: executing remote ssh commands using password
-#         uses: appleboy/ssh-action@master
-#         with:
-#           host: ${{ secrets.HOST }}
-#           username: ${{ secrets.USERNAME }}
-#           password: ${{ secrets.PASSWORD }}
-#           port: ${{ secrets.PORT }}
-#           script: whoami
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            whoami
+            ls -al
 #       - name: ls
 #         run: ls
 #       - name: e
 #         run: echo 'The only winning move is not to play.' > demo.txt
-      - uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
-        with:
-          ORIGIN: ${{ secrets.HOST }} # example.com || 8.8.8.8
-          SSHKEY: ${{ secrets.SSH }} # ----- BEGIN RSA PRIVATE KEY----- ...
-          NAME: production
-          PORT: ${{ secrets.PORT }} # 3000
-          USER: ${{ secrets.USER }} # admin
-      - run: ssh production ls --help
+
+#       - uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
+#         with:
+#           ORIGIN: ${{ secrets.HOST }} # example.com || 8.8.8.8
+#           SSHKEY: ${{ secrets.SSH }} # ----- BEGIN RSA PRIVATE KEY----- ...
+#           NAME: production
+#           PORT: ${{ secrets.PORT }} # 3000
+#           USER: ${{ secrets.USER }} # admin
+#       - run: ssh production ls --help
