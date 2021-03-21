@@ -12,37 +12,9 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            pm2 stop test-strapi-bd
-            git clone https://github.com/StekolschikovV/strapi-pm-2-vps.git 
+            pm2 delete test-strapi-bd
+            git clone https://github.com/StekolschikovV/strapi-pm-2-vps.git
             cd strapi-pm-2-vps
             yarn
             yarn run build
             NODE_ENV=production pm2 start server.js --name test-strapi-bd
-        
-   
-   
-   
-#        export NVM_DIR="$HOME/.nvm"
-#             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-#             sudo ln -s /usr/local/bin/node /usr/bin/node
-#             sudo ln -s /usr/local/lib/node /usr/lib/node
-#             sudo ln -s /usr/local/bin/npm /usr/bin/npm
-#             sudo ln -s /usr/local/bin/node-waf /usr/bin/node-waf
-#             nvm install --lts
-#             node -v
-#             npm -v
-#             rm -rf strapi-pm-2-vps/ 
-            
-#       - name: ls
-#         run: ls
-#       - name: e
-#         run: echo 'The only winning move is not to play.' > demo.txt
-
-#       - uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
-#         with:
-#           ORIGIN: ${{ secrets.HOST }} # example.com || 8.8.8.8
-#           SSHKEY: ${{ secrets.SSH }} # ----- BEGIN RSA PRIVATE KEY----- ...
-#           NAME: production
-#           PORT: ${{ secrets.PORT }} # 3000
-#           USER: ${{ secrets.USER }} # admin
-#       - run: ssh production ls --help
