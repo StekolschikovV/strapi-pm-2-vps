@@ -12,7 +12,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            pm2 stop 
+            pm2 stop test-strapi-bd
             git clone https://github.com/StekolschikovV/strapi-pm-2-vps.git 
             cd strapi-pm-2-vps
             yarn
