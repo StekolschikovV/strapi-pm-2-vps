@@ -12,21 +12,26 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            sudo ln -s /usr/local/bin/node /usr/bin/node
-            sudo ln -s /usr/local/lib/node /usr/lib/node
-            sudo ln -s /usr/local/bin/npm /usr/bin/npm
-            sudo ln -s /usr/local/bin/node-waf /usr/bin/node-waf
-            nvm install --lts
-            node -v
-            npm -v
-            rm -rf strapi-pm-2-vps/ 
+            pm2 stop 
             git clone https://github.com/StekolschikovV/strapi-pm-2-vps.git 
             cd strapi-pm-2-vps
             yarn
+            yarn run build
+            NODE_ENV=production pm2 start server.js --name test-strapi-bd
         
-            
+   
+   
+   
+#        export NVM_DIR="$HOME/.nvm"
+#             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+#             sudo ln -s /usr/local/bin/node /usr/bin/node
+#             sudo ln -s /usr/local/lib/node /usr/lib/node
+#             sudo ln -s /usr/local/bin/npm /usr/bin/npm
+#             sudo ln -s /usr/local/bin/node-waf /usr/bin/node-waf
+#             nvm install --lts
+#             node -v
+#             npm -v
+#             rm -rf strapi-pm-2-vps/ 
             
 #       - name: ls
 #         run: ls
